@@ -1,0 +1,2 @@
+#define ATTENDENCEREPO_API __declspec(dllexport)
+#define ATTENDENCEREPO_API __declspec(dllimport)
