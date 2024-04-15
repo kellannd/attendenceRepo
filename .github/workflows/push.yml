@@ -65,6 +65,12 @@ jobs:
       - name: Setup VSTest.exe
         uses: Malcomnixon/Setup-VSTest@v4
 
+      - name: DownloadBinaries
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+          path: x64\Release
+
       - name: RunTests
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: VSTest.Console.exe x64\Release\UnitTest1.dll
