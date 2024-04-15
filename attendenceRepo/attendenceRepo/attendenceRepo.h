@@ -20,3 +20,5 @@ public:
 extern ATTENDENCEREPO_API int nattendenceRepo;
 
 ATTENDENCEREPO_API int fnattendenceRepo(void);
+
+ATTENDENCEREPO_API int testMe(int i);
