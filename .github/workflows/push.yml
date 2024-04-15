@@ -51,3 +51,12 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: echo LINT
 
+  test:
+    needs: [build, lint]
+    runs-on: windows-latest
+
+    steps:
+      - name: RunTest
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: echo TEST
+
