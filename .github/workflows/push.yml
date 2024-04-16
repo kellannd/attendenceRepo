@@ -96,7 +96,7 @@ jobs:
             
       - name: addEmail
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: git config --global user.email "dealka@mail.uc.edu"
+        run: git config --global user.email "kellyanndeal@gmail.com"
             
       - name: addName
         working-directory: ${{env.GITHUB_WORKSPACE}}
