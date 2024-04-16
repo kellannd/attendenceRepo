@@ -92,7 +92,7 @@ jobs:
           
       - name: stage
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: copy  x64\Release\AttendenceExe.exe .
+        run: copy  x64\Release\attendenceRepo.exe .
             
       - name: addEmail
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -104,7 +104,7 @@ jobs:
             
       - name: add
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: git add AttendenceExe.exe 
+        run: git add attendenceRepo.exe 
                 
       - name: commit
         working-directory: ${{env.GITHUB_WORKSPACE}}
