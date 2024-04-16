@@ -47,7 +47,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: my-artifact
-          path: x64\Release
+          path: x64\Release\
           if-no-files-found: error
 
   lint:
@@ -65,16 +65,16 @@ jobs:
     steps:
       - name: Setup VSTest.exe
         uses: Malcolmnixon/Setup-VSTest@v4
-
+      
       - name: DownloadBinaries
         uses: actions/download-artifact@v3
         with:
           name: my-artifact
           path: x64\Release
-
+    
       - name: RunTests
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: VSTest.Console.exe x64\Release\Test1.dll
+        run: VSTest.Console.exe  x64\Release\UnitTest1.dll
   
   SaveBinary:
 
@@ -96,11 +96,11 @@ jobs:
             
       - name: addEmail
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: git config --global user.email "olekaspt@mail.uc.edu"
+        run: git config --global user.email "dealka@mail.uc.edu"
             
       - name: addName
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: git config --global user.name "Patrick Olelas"
+        run: git config --global user.name "Kelly Deal"
             
       - name: add
         working-directory: ${{env.GITHUB_WORKSPACE}}
