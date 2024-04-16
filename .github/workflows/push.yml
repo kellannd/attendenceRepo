@@ -47,7 +47,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: my-artifact
-          path: x64\Release\
+          path: x64\Release
           if-no-files-found: error
 
   lint:
@@ -65,6 +65,13 @@ jobs:
     steps:
       - name: Setup VSTest.exe
         uses: Malcolmnixon/Setup-VSTest@v4
+
+      - name: DownloadBinaries
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+          path: x64\Release
+
       - name: RunTests
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: VSTest.Console.exe x64\Release\Test1.dll
